@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no"
+    />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHLTSNFJ0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-KRHLTSNFJ0');
+    </script>
+
+    <link
+      rel="preload"
+      type="font/otf"
+      as="font"
+      href="assets/fonts/font.otf"
+      crossorigin="font"
+    />
+
+    <script src="lib/socket.io.min.js"></script>
+    <script src="lib/phaser.min.js"></script>
+
+    <title>Rabble Games - WC Duck</title>
+    <link rel="icon" type="image/x-icon" href="../assets/UI/rabble-icon.png">
+
+
+    <style>
+      @font-face {
+        font-family: RakeslyRG;
+        src: url(assets/fonts/font.otf);
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        display: none;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #4e316e;
+        border-radius: 10px;
+      }
+
+      * {
+        font-family: RakeslyRG;
+        user-select: none;
+      }
+
+      html {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        overflow: hidden;
+      }
+
+      #loader {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        background: none;
+        transform: translate(-50%, -50%);
+      }
+      #loadingImage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        animation: blink 2s infinite ease-in-out;
+      }
+
+      .scoreBox {
+        margin: 15px 0px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .scoreImageBox {
+        display: flex;
+        align-self: flex-start;
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #4e316e;
+        border-radius: 50%;
+        border: 5px solid #442566;
+      }
+
+      .scoreImage {
+        width: 40%;
+        height: 40%;
+        object-fit: contain;
+      }
+
+      .scoreText {
+        font-size: 25px;
+        color: #fff;
+      }
+
+      .scoreTitle {
+        margin: 0px auto 0px 20px;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .scoreTitlePlus {
+        margin: 0px auto 0px 20px;
+        font-size: 40px;
+        font-weight: bold;
+        color: #f20071;
+      }
+
+      .scoreValue {
+        font-size: 40px;
+      }
+
+      .scoreValuePlus {
+        font-size: 40px;
+        color: #f20071;
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      @media (min-width: 600px) {
+        body {
+          background: url(assets/backgrounds/desktop.png) no-repeat center
+            center fixed;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loader">
+      <img
+        id="loadingImage"
+        src="/assets/loader.png"
+        alt="Loading"
+        id="loadingImage"
+      />
+    </div>
+
+    <div id="game"></div>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

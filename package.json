@@ -1,0 +1,17 @@
+{
+  "name": "wc-duck",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "anujc21",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "rabble-shared": "file:../shared",
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.7"
+  }
+}
